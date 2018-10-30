@@ -21,14 +21,25 @@ TicketBank.prototype.addTicket = function(ticket) {
 }
 
 // CONSTRUCTOR TO BUILD NEW TICKETS FROM USER INPUTS
-function Ticket(title, runStatus, time, age) {
+function Ticket(title, time, age) {
   this.title = title,
-  this.runStatus = runStatus,
   this.time = time,
   this.age = age
 }
 
 // PROTOTYPE METHOD ADD TO CALCULATE TICKET COST BASED ON ADDED TICKET OBJECT
+
+Ticket.prototype.whichFilm = function(ticket) {
+  if (this.title === "ninjaTurtles") {
+    this.runStatus = 'old';
+  } else if (this.title === "fastFurious90") {
+    this.runStatus = 'new';
+  } else {
+    false;
+  }
+}
+
+
 Ticket.prototype.getCost = function(ticket) {
  var discount = 0;
  var ticketBase = 12;
@@ -68,15 +79,16 @@ $(document).ready(function() {
   $("#showtime").submit(function(event) {
     event.preventDefault();
 
-    var runStatus = $("#movieName").val();
+    var title = $("#movieName").val();
     var age = $("#age").val();
     var time = $("#time").val();
 
-    var myTicket = new Ticket(runStatus, runStatus, time, age);
+    var myTicket = new Ticket(title, time, age);
     myTicket.getCost();
+    myTicket.whichFilm();
     var cost = myTicket.price;
     ticketsSoldSoFar.addTicket();
-    $("p#showCost").append("Your ticket costs $" + cost + ".00");
+    $("p#showCost").append(title + " " + time + " $" + cost + ".00");
 
   });
 });
