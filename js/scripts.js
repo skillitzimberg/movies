@@ -44,8 +44,8 @@ Ticket.prototype.whichFilm = function(ticket) {
 
 
 Ticket.prototype.calculatePrice = function(ticket) {
- var discount = 0;
- var ticketBase = 12;
+  var ticketBase = 12;
+  var discount = 0;
 
  switch (this.time) {
    case "matinee":
