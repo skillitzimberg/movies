@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <title>Movie Ticket For Movies</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Go See A Film</h1>
+
+      <form id="showtime">
+        <label for="movieName">Pick a movie</label>
+        <select class="form-control" id="movieName">
+          <option value="ninjaTurtles">Ninja Turtles</option>
+          <option value="fastFurious90">Fast and Furious 90: The Wreckoning</option>
+        </select>
+
+        <label for="age">Pick a movie</label>
+        <select class="form-control" id="age">
+          <option value="regular">Regular</option>
+          <option value="senior">Senior (broken)</option>
+        </select>
+
+        <label for="time">Pick a movie</label>
+        <select class="form-control" id="time">
+          <option value="matinee">Matinee</option>
+          <option value="late">Late Show</option>
+        </select>
+
+        <button type="submit" name="button" class="btn btn-success">See the price</button>
+
+      </form>
+      <div>
+        <h2>Ticket Cost:</h2>
+        <p id="showCost"></p>
+      </div>
+
+    </div>
+  </body>
+</html>

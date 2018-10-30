@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0117)https://www.learnhowtoprogram.com/intro-to-programming/object-oriented-javascript/address-book-constructor-prototypes -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Address Book: Constructor &amp; Prototypes</title>
+
+<script type="text/javascript" src="./Address Book_ Constructor &amp; Prototypes_files/48356a79ca"></script><script src="./Address Book_ Constructor &amp; Prototypes_files/nr-1099.min.js"></script><script type="text/javascript" async="" src="./Address Book_ Constructor &amp; Prototypes_files/loader.js"></script><script type="text/javascript" async="" src="./Address Book_ Constructor &amp; Prototypes_files/aa1422f9-9ca9-4942-8b1c-830007020e3d.js"></script><script async="" src="./Address Book_ Constructor &amp; Prototypes_files/analytics.js"></script><script src="./Address Book_ Constructor &amp; Prototypes_files/Gy5a6AgvmvRZuSjIcKRIBTwX4nQ.js"></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"48356a79ca","applicationID":"1386295","transactionName":"IAwPEhQNWVxUFx5VUBAQDggVTUZYXhI=","queueTime":15,"applicationTime":236,"agent":""}</script>
+<script>window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="l30dQQ7xVvuWxGLHZCvnulqJKy1dn+w/zTBIh/HeJSNVA2WiIdqnoDOHCOewsYbt5buVlPFNKYv2mJUNR7EIVw==">
+<link rel="stylesheet" media="all" href="./Address Book_ Constructor &amp; Prototypes_files/application-66d039bbf9ff6c7962fca542e68585d775f8383f31b49689b2303b240ed919ca.css">
+<link rel="shortcut icon" type="image/x-icon" href="https://www.learnhowtoprogram.com/assets/favicon-d0e8ff63da72a0c5ea15ebc045a7f9d2979d211a12e596a5ed5f5b1534e78919.png">
+<link href="./Address Book_ Constructor &amp; Prototypes_files/css" rel="stylesheet" type="text/css">
+<script src="./Address Book_ Constructor &amp; Prototypes_files/application-fe663aba37aaf76c0554862e402837cecee85ce5a9110cfa646bc16c3cf9fa38.js"></script>
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><script type="text/javascript" charset="utf-8" async="" src="./Address Book_ Constructor &amp; Prototypes_files/5cfba93a81394244b823.js"></script><script type="text/javascript" charset="utf-8" async="" src="./Address Book_ Constructor &amp; Prototypes_files/9b639e7588d25f3dc26b.js"></script><script type="text/javascript" charset="utf-8" async="" src="./Address Book_ Constructor &amp; Prototypes_files/0fa97c2c856c43449dfb.js"></script><style type="text/css" data-us="uspss">/*uspssb*/.darknight.us-button-c50731562836a85c59cfa515f8f8ab70{font-family:Roboto,sans-serif!important;font-size:12px!important;bottom:0;right:30px;position:fixed!important;background-color:#444!important;border-top:2px solid #515151!important;border-radius:3px 3px 0 0!important;padding:0 15px!important;height:30px!important;line-height:30px!important;cursor:pointer!important;text-shadow:none!important;width:auto!important;margin:0!important;color:#fff;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-transition:background-color .2s ease-in-out,height .15s ease-in-out;-moz-transition:background-color .2s ease-in-out,height .15s ease-in-out;-o-transition:background-color .2s ease-in-out,height .15s ease-in-out;transition:background-color .2s ease-in-out,height .15s ease-in-out;z-index:2147483636;-webkit-user-select:none;-moz-user-select:-moz-none;-ms-user-select:none;-o-user-select:none;user-select:none}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70:hover{height:33px!important;background-color:#373737!important;border-top:2px solid #444!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.left{right:auto!important;left:50px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right{right:-100px;bottom:37%!important;transform:rotate(-90deg);-ms-transform:rotate(-90deg);-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);-webkit-transform-origin:0 0;-moz-transform-origin:0 0;-ms-transform-origin:0 0;-o-transform-origin:0 0;transform-origin:0 0}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right:hover{height:30px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right-ie8{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3)!important;zoom:1!important;background-color:#444!important;bottom:37%!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right-ie8.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right-ie8:hover{background-color:#373737!important;height:30px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right-ie7{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3)!important;zoom:1!important;background-color:#444!important;bottom:37%!important;right:-75px;width:75px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right-ie7.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-right-ie7:hover{background-color:#373737!important;height:30px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left{transform:rotate(-90deg);-ms-transform:rotate(-90deg);-webkit-transform:rotate(-90deg);-moz-transform:rotate(-90deg);-o-transform:rotate(-90deg);-webkit-transform-origin:0 0;-moz-transform-origin:0 0;-ms-transform-origin:0 0;-o-transform-origin:0 0;transform-origin:0 0;left:0!important;bottom:37%!important;right:auto!important;border-radius:0 0 3px 3px!important;border-bottom:2px solid #515151!important;border-top:none!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left:hover{height:30px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left-ie8{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3)!important;zoom:1!important;background-color:#444!important;bottom:37%!important;left:0!important;right:auto!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left-ie8.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left-ie8:hover{background-color:#373737!important;height:30px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left-ie7{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3)!important;zoom:1!important;background-color:#444!important;bottom:37%!important;left:-2px!important;width:75px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left-ie7.hover,.darknight.us-button-c50731562836a85c59cfa515f8f8ab70.rotate-left-ie7:hover{background-color:#373737!important;height:30px!important}.darknight.us-button-c50731562836a85c59cfa515f8f8ab70 svg{background:none!important;border:none!important;box-shadow:none!important;box-sizing:content-box!important;clip:auto!important;color:inherit!important;cursor:inherit!important;display:inline-block!important;fill:currentColor!important;height:18px!important;margin:0 8px -1px 0!important;opacity:1!important;order:0!important;padding:0!important;pointer-events:none!important;position:static!important;transform:none!important;vertical-align:sub!important;width:18px!important}/*uspsse*/</style></head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<span class="label label-info">Lesson</span>
+<span class="label label-primary">Weekend</span>
+<ul class="breadcrumb">
+<li><a href="https://www.learnhowtoprogram.com/intro-to-programming">Intro to Programming</a></li>
+<li><a href="https://www.learnhowtoprogram.com/intro-to-programming/object-oriented-javascript">Object-Oriented JavaScript</a></li>
+<li class="active">Address Book: Constructor &amp; Prototypes</li>
+</ul>
+<ul class="nav nav-tabs">
+<li class="active"><a href="https://www.learnhowtoprogram.com/intro-to-programming/object-oriented-javascript/address-book-constructor-prototypes#text" data-toggle="tab">Text</a></li>
+<li><a href="https://www.learnhowtoprogram.com/intro-to-programming/object-oriented-javascript/address-book-constructor-prototypes#cheat-sheet" data-toggle="tab">Cheat sheet</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active in" id="text">
+<p>Now that we have an understanding of JavaScript objects, let's put them to work! In the next few lessons we'll build an address book app to store contact info for our friends.</p>
+<p>Since each contact will have multiple properties, we will use <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> objects to encapsulate their data. And because all <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code>s should have the same combination of properties (name, phone number, etc.) we'll create a constructor that can quickly craft many different <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> objects with this same structure.</p>
+<p>We'll focus only on the business logic for now, and build code for the user interface together in upcoming lessons. </p>
+<h2>Project Setup</h2>
+<p>First, let's create a project directory called <em>address-book</em>. It will contain a <em>js</em> subdirectory to house JavaScript logic, with a single JavaScript file called <em>scripts.js</em> inside. Like all project, we'll also include a <em>README.md</em>.</p>
+<p>Our project structure should look like this:</p>
+<pre>address-book
+├── js
+│&nbsp;&nbsp; └── scripts.js
+└── README.md
+</pre>
+<p>Again, we'll wait to add user interface logic (that is, any jQuery, HTML, and anything else meant to create the user-facing portion of the app) until after we've written our business logic.</p>
+<h2>Constructor</h2>
+<p>We'll start by building a simple <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> constructor in <em>scripts.js</em>:</p>
+<div class="filename">scripts.js</div>
+<pre><code class="prettyprint lang-javascript prettyprinted" style=""><span class="kwd">function</span><span class="pln"> </span><span class="typ">Contact</span><span class="pun">(</span><span class="pln">firstName</span><span class="pun">,</span><span class="pln"> lastName</span><span class="pun">,</span><span class="pln"> phoneNumber</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">firstName </span><span class="pun">=</span><span class="pln"> firstName</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">lastName </span><span class="pun">=</span><span class="pln"> lastName</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">phoneNumber </span><span class="pun">=</span><span class="pln"> phoneNumber
+</span><span class="pun">}</span></code></pre>
+<p>Let's test this code! We can copy/paste the constructor above into the browser's JavaScript console, then create a new <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> by running the following:</p>
+<pre><code class="prettyprint lang-shell prettyprinted" style=""><span class="kwd">var</span><span class="pln"> testContact </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Contact</span><span class="pun">(</span><span class="str">"Ada"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Lovelace"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"503-555-1111"</span><span class="pun">);</span></code></pre>
+<p>If we check the value of <code class="prettyprint prettyprinted" style=""><span class="pln">testContact</span></code> (by typing <code class="prettyprint prettyprinted" style=""><span class="pln">testContact</span></code> into the console, and hitting <em>Enter</em>), we'll see the following response appear:</p>
+<pre><code class="prettyprint lang-javascript prettyprinted" style=""><span class="typ">Contact</span><span class="pln">&nbsp;</span><span class="pun">{</span><span class="pln">firstName</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Ada"</span><span class="pun">,</span><span class="pln"> lastName</span><span class="pun">:</span><span class="pln"> </span><span class="str">"Lovelace"</span><span class="pun">,</span><span class="pln"> phoneNumber</span><span class="pun">:</span><span class="pln"> </span><span class="str">"503-555-1111"</span><span class="pun">}</span></code></pre>
+<p>This means our object has been successfully saved! The console remembered the <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> object we created and associated with the <code class="prettyprint prettyprinted" style=""><span class="pln">testContact</span></code> variable name. And that <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> object contains all the properties we provided our constructor.</p>
+<h3>Accessing Object Properties</h3>
+<p>We can also access our object's individual properties. For instance, we can type the following into the console:</p>
+<pre><code class="prettyprint lang-javaScript prettyprinted" style=""><span class="pln">testContact</span><span class="pun">.</span><span class="pln">lastName</span></code></pre>
+<p>And it will return the <code class="prettyprint prettyprinted" style=""><span class="pln">lastName</span></code> property we instantiated our <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> object with:</p>
+<pre><code class="prettyprint lang-javaScript prettyprinted" style=""><span class="str">"Lovelace"</span></code></pre>
+<p>Notice we don't use parentheses after <code class="prettyprint prettyprinted" style=""><span class="pln">lastName</span></code>. This is because it's a property of the object, not a method being called upon it. This same syntax will work for the other object properties too. For instance, we could call <code class="prettyprint prettyprinted" style=""><span class="pln">testContact</span><span class="pun">.</span><span class="pln">firstName</span></code> or <code class="prettyprint prettyprinted" style=""><span class="pln">testContact</span><span class="pun">.</span><span class="pln">phoneNumber</span></code> to see other properties.</p>
+<h2>Prototype</h2>
+<p>Next, let's create a simple prototype method to call on <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> objects. Let's say we want a <code class="prettyprint prettyprinted" style=""><span class="pln">fullName</span><span class="pun">()</span></code> method to return the contact's first and last name, concatenated together.</p>
+<p>We can define a new prototype function in our <em>scripts.js</em> file like this:</p>
+<div class="filename">scripts.js</div>
+<pre><code class="prettyprint lang-javascript prettyprinted" style=""><span class="kwd">function</span><span class="pln"> </span><span class="typ">Contact</span><span class="pun">(</span><span class="pln">firstName</span><span class="pun">,</span><span class="pln"> lastName</span><span class="pun">,</span><span class="pln"> phoneNumber</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">firstName </span><span class="pun">=</span><span class="pln"> firstName</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">lastName </span><span class="pun">=</span><span class="pln"> lastName</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">phoneNumber </span><span class="pun">=</span><span class="pln"> phoneNumber
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="typ">Contact</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">fullName </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">firstName </span><span class="pun">+</span><span class="pln"> </span><span class="str">" "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">lastName</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p>Then we can copy/paste the contents of <em>scripts.js</em> into the JavaScript console again, and create another sample <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> by invoking our constructor with the following code:</p>
+<pre><code class="prettyprint lang-javaScript prettyprinted" style=""><span class="kwd">var</span><span class="pln"> testContact </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Contact</span><span class="pun">(</span><span class="str">"Ada"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Lovelace"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"503-555-1111"</span><span class="pun">);</span></code></pre>
+<p>After that, we can call our new method in the console like this:</p>
+<pre><code class="prettyprint lang-javascript prettyprinted" style=""><span class="pln">testContact</span><span class="pun">.</span><span class="pln">fullName</span><span class="pun">();</span></code></pre>
+<p>It will return the object's <code class="prettyprint prettyprinted" style=""><span class="pln">firstName</span></code> and <code class="prettyprint prettyprinted" style=""><span class="pln">lastName</span></code> properties concatenated together:</p>
+<pre><code class="prettyprint lang-shell prettyprinted" style=""><span class="str">"Ada Lovelace"</span></code></pre>
+<p>Note that we need to use parentheses when we call our <code class="prettyprint prettyprinted" style=""><span class="pln">fullName</span><span class="pun">()</span></code> method, because it is a method on the object, not a property. Also, it's important to remember that this method can only be called on <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> objects.</p>
+<p>Now that we've created a constructor for <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> and a simple prototype method that can be called on <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code>s, let's move on to constructing the address book itself.</p>
+<hr>
+<p><strong><a href="https://github.com/epicodus-lessons/address-book-example"><i class="glyphicon glyphicon-folder-open"></i> Example GitHub Repo for the Address Book</a></strong></p>
+</div>
+<div class="tab-pane" id="cheat-sheet">
+<h2>Examples</h2>
+<p></p><hr><p></p>
+<p>Creating a <code class="prettyprint prettyprinted" style=""><span class="typ">Contact</span></code> constructor:</p>
+<pre><code class="prettyprint lang-javascript prettyprinted" style=""><span class="kwd">function</span><span class="pln"> </span><span class="typ">Contact</span><span class="pun">(</span><span class="pln">firstName</span><span class="pun">,</span><span class="pln"> lastName</span><span class="pun">,</span><span class="pln"> phoneNumber</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">firstName </span><span class="pun">=</span><span class="pln"> firstName</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">lastName </span><span class="pun">=</span><span class="pln"> lastName</span><span class="pun">,</span><span class="pln">
+  </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">phoneNumber </span><span class="pun">=</span><span class="pln"> phoneNumber
+</span><span class="pun">}</span></code></pre>
+<p>Creating a prototype method on our constructor:</p>
+<pre><code class="prettyprint lang-javascript prettyprinted" style=""><span class="typ">Contact</span><span class="pun">.</span><span class="pln">prototype</span><span class="pun">.</span><span class="pln">fullName </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">firstName </span><span class="pun">+</span><span class="pln"> </span><span class="str">" "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">lastName</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p><strong><a href="https://github.com/epicodus-lessons/address-book-example"><i class="glyphicon glyphicon-folder-open"></i> Example GitHub Repo for the Address Book</a></strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://www.learnhowtoprogram.com/tracks">Tracks</a>
+</div>
+<div id="navbar" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li> </li><li><a href="https://www.learnhowtoprogram.com/intro-to-programming/object-oriented-javascript/constructors-and-prototypes">Previous</a></li>
+<li><a href="https://www.learnhowtoprogram.com/intro-to-programming/object-oriented-javascript/objects-within-objects-b2fdf137-c43a-43a7-bccb-00d0ccc1f009">Next</a></li>
+
+</ul>
+<ul class="nav navbar-nav pull-right">
+<li id="navbar-search">
+<form class="navbar-form navbar-left" action="https://www.learnhowtoprogram.com/lessons" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+<div class="input-group">
+<input type="text" name="search" id="search" placeholder="Search lessons" class="form-control">
+<div class="input-group-btn">
+<button name="button" type="submit" class="btn btn-info" id="lesson-search">
+<span class="glyphicon glyphicon-search"></span>
+</button> </div>
+</div>
+</form> </li>
+</ul>
+</div>
+</div>
+</nav>
+<footer class="footer">
+<div class="container">
+<a href="http://www.epicodus.com/" target="_blank"><img id="epicodus-logo" src="./Address Book_ Constructor &amp; Prototypes_files/saved_resource" title="Learn to program at Epicodus" alt="Learn to program at Epicodus"></a>
+<p>© 2018 <a href="http://www.epicodus.com/">Epicodus</a>, Inc.</p>
+</div>
+</footer>
+
+<script type="text/javascript">
+      var _usersnapconfig = { loadHandler: function() {UserSnap.on('beforeSend', function(obj) { obj.label = "Intro to Programming"; }) } };
+      (function() { var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = '//api.usersnap.com/load/aa1422f9-9ca9-4942-8b1c-830007020e3d.js';
+      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); })();
+    </script>
+
+
+
+<div title="Send a screenshot with your annotations." id="us_report_button" unselectable="on" tabindex="0" role="button" aria-describedby="us_report_button_description" class="us-button-c50731562836a85c59cfa515f8f8ab70 darknight"><svg role="img" alt="Usersnap" aria-label="Usersnap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" style="fill: currentColor; pointer-events: none;">
+<path d="M136.9,53.5C127.9,16,90.5-6.2,53.6,2.7C35.6,7.1,20.2,18.1,10.8,34S-1.4,68.5,3.1,86.4c7.3,31.3,35.8,52.9,66.7,52.9
+	c5.7,0,11.4-0.8,16.2-2.1C123.5,127.5,146.2,90.5,136.9,53.5z M40.5,118.1C13.7,101.9,5.2,66.9,21,39.7c7.7-13,20.7-22.4,34.9-25.6
+	c4.5-1.2,8.9-1.6,13.9-2.1c31.3,0,57.3,25.6,57.3,57.3c0,26-17.9,48.8-43.6,55.3C69,128.7,53.1,126.7,40.5,118.1z M107.2,59.2
+	c-1.6-3.7-6.9-3.3-7.7,0.4c-6.9,20.3-29.7,30.5-49.6,23.6c-3.7-1.6-7.3-3.3-11-6.1c-1.6-1.2-3.7-1.2-4.9,0.8
+	c-0.8,0.8-0.8,2.1-0.8,2.5c0,2.5,0.8,4.5,1.6,6.9c6.5,17.5,25.2,28.5,43.6,25.2c20.7-3.7,34.9-24,30.9-45.1c0-0.8-0.4-1.6-0.4-2.5
+	C108,62.9,107.6,61.2,107.2,59.2z"></path>
+</svg>
+Feedback</div><div id="us_report_button_description" style="text-indent: -99999px; display: block; position: absolute; width: 0px; height: 0px; color: transparent; overflow: hidden; top: -999999px; left: -999999px;">Send a screenshot with your annotations.</div></body></html>
