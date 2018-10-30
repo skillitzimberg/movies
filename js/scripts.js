@@ -1,18 +1,20 @@
-// BUSINESS LOGIC FOR MOVIES
-function Movie(title, runStatus, time) {
-    this.title = title,
-    this.runStatus = runStatus,
-    this.time  = time
+function Movies() {
+  var movies = [];
 }
 
-var ninjaTurtles = new Movie("Teenage Mutant Ninja Turtles", "Old");
+function Movie(title, runStatus) {
+  this.title = title,
+  this.runStatus = runStatus
+}
 
-var fastFurious90 = new Movie("Fast and the Furious: Still not Done", "New");
+Movies.prototype.addMovie = function(movie) {
+  this.movies.push(movie);
+}
 
 // BUSINESS LOGIC FOR TICKETS
 
 // CONSTRUCTOR TO BUILD EMPTY BANK TO STORE TICKETS AFTER 'BUTTON' FUNCTION RUNS/CLEARS EACH TIME
-function TicketBank() {
+function Tickets() {
   this.savedTickets = [];
 }
 
@@ -21,18 +23,19 @@ TicketBank.prototype.addTicket = function(ticket) {
 }
 
 // CONSTRUCTOR TO BUILD NEW TICKETS FROM USER INPUTS
-function Ticket(title, time, age) {
+function Ticket(title, time, age, price) {
   this.title = title,
   this.time = time,
-  this.age = age
+  this.age = age,
+  this.price = price
 }
 
 // PROTOTYPE METHOD ADD TO CALCULATE TICKET COST BASED ON ADDED TICKET OBJECT
 
 Ticket.prototype.whichFilm = function(ticket) {
-  if (this.title === "ninjaTurtles") {
+  if (this.title === "Ninja Turtles") {
     this.runStatus = 'old';
-  } else if (this.title === "fastFurious90") {
+  } else if (this.title === "Fast and Furious 90: The Wreckoning") {
     this.runStatus = 'new';
   } else {
     false;
@@ -40,7 +43,7 @@ Ticket.prototype.whichFilm = function(ticket) {
 }
 
 
-Ticket.prototype.getCost = function(ticket) {
+Ticket.prototype.calculatePrice = function(ticket) {
  var discount = 0;
  var ticketBase = 12;
 
@@ -48,6 +51,7 @@ Ticket.prototype.getCost = function(ticket) {
    case "matinee":
    discount += 2
    break;
+
    default:
  }
 
@@ -84,11 +88,11 @@ $(document).ready(function() {
     var time = $("#time").val();
 
     var myTicket = new Ticket(title, time, age);
-    myTicket.getCost();
     myTicket.whichFilm();
+    myTicket.calculatePrice();
     var cost = myTicket.price;
     ticketsSoldSoFar.addTicket();
-    $("p#showCost").append(title + " " + time + " $" + cost + ".00");
+    $("p#showCost").text(title + " " + time + " $" + cost + ".00");
 
   });
 });
