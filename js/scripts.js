@@ -1,5 +1,6 @@
+
 // BUSINESS LOGIC FOR MOVIES
-  // Constructors & Prototypes
+
 function Movies() {
   this.movies = []
 }
@@ -22,23 +23,10 @@ Movies.prototype.findMovie = function(movieTitle) {
   return false;
 }
 
-// Create Instances of MOVIE objects and add to MOVIES
-
-var nowShowing = new Movies();
-
-var ninjaTurtles = new Movie("Teenage Mutant Ninja Turtles", "secondRun");
-var fastFurious90 = new Movie("Fast and Furious 90: The Wreckoning", "firstRun");
-
-nowShowing.addMovie(ninjaTurtles);
-nowShowing.addMovie(fastFurious90);
-console.log(nowShowing);
-
-
-
 // BUSINESS LOGIC FOR TICKETS & TICKET PRICES
-function Ticket(movieTitle, showTime, ticketType, ticketPrice) {
+function Ticket(movieTitle, time, ticketType, ticketPrice) {
   this.movieTitle = movieTitle,
-  this.showTime = showTime,
+  this.time = time,
   this.ticketType = ticketType,
   this.ticketPrice = ticketPrice
 }
@@ -58,23 +46,39 @@ TicketPrice.prototype.generateTicketPrice = function(ticketType, showTime, first
   return ticketPrice = this.generalAdmission - discount;
 }
 
+// CREATE MOVIES "DATABASE"
+var nowShowing = new Movies();
+var ninjaTurtles = new Movie("Teenage Mutant Ninja Turtles", "secondRun");
+var fastFurious90 = new Movie("Fast and Furious 90: The Wreckoning", "firstRun");
+
+nowShowing.addMovie(ninjaTurtles);
+nowShowing.addMovie(fastFurious90);
+
+
+// CREATE AND ISSUE A TICKET
+// FOLLOWING README SPECIFICATION 8:
+var chosenMovie = nowShowing.findMovie("Fast and Furious 90: The Wreckoning");
+var movieTitle = chosenMovie.title;
+var firstRunOrSecondRun = chosenMovie.firstRunOrSecondRun;
 var ticketPrice = new TicketPrice();
-ticketPrice.generateTicketPrice("generalAdmission","primeTime", "secondRun");
-console.log(ticketPrice);
-var issueTicket = new Ticket("Teenage Mutant Ninja Turtles", "primeTime", "generalAdmission", ticketPrice);
+
+// Admission type (general, senior/youth) is hard coded for now; will come from UI
+// Movie showing is hard coded for now; will come from UI
+ticketPrice.generateTicketPrice("generalAdmission","primeTime", firstRunOrSecondRun);
+
+var issueTicket = new Ticket(movieTitle, "primeTime", "generalAdmission", ticketPrice);
 console.log(issueTicket);
 
 
 
 // USER INTERFACE LOGIC
 
-
-
 $(document).ready(function() {
   $("#showtime").submit(function(event) {
     event.preventDefault();
 
-    // var movieTitle = $("#movieTitle").val();
+    var movieTitle = $("#movieTitle").val();
+    console.log(movieTitle);
     // var ageGroupDiscount = $("#ageGroupDiscount").val();
     // var showTime = $("#showTime").val();
 

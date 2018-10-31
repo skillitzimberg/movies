@@ -1,6 +1,21 @@
-spec one: Add movie to movies
-spec two: Return ticket price for general admission;
-spec three: Return ticket price for senior admission;
-spec four: Return ticket price for senior and matinee admission;
-spec five: Return ticket price for senior and matinee and second run admission;
-spec six: console.log(movieTitle) from user input
+specification:
+
+√ 1: Add movie to movies
+√ 2: Return ticket price for general admission;
+√ 3: Return ticket price for senior admission;
+√ 4: Return ticket price for senior and matinee admission;
+√ 5: Return ticket price for senior and matinee and second run admission;
+√ 6: console.log(movieTitle) from user input;
+√ 7: console.log(movie) using findMovie();
+√ 8: Create a complete general admission ticket;
+* √ find a movie
+* √ get the movie's title
+* √ get admission type - general, senior/youth, hard coded for now
+* √ find out when the movie is playing - hard coded for now
+* √ find out if the movie is first or second firstRun
+* √ get ticket price
+
+9: Get movie from UI and create ticket
+* get movie movie
+* find move using movie
+* issue ticket
