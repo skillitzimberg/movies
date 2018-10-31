@@ -1,94 +1,84 @@
 // BUSINESS LOGIC FOR MOVIES
-function Movie(title, runStatus, time) {
+  // Constructors & Prototypes
+function Movies() {
+  this.movies = []
+}
+
+function Movie(title, firstRunOrSecondRun) {
     this.title = title,
-    this.runStatus = runStatus,
-    this.time  = time
+    this.firstRunOrSecondRun = firstRunOrSecondRun
 }
 
-var ninjaTurtles = new Movie("Teenage Mutant Ninja Turtles", "Old");
-
-var fastFurious90 = new Movie("Fast and the Furious: Still not Done", "New");
-
-// BUSINESS LOGIC FOR TICKETS
-
-// CONSTRUCTOR TO BUILD EMPTY BANK TO STORE TICKETS AFTER 'BUTTON' FUNCTION RUNS/CLEARS EACH TIME
-function TicketBank() {
-  this.savedTickets = [];
+Movies.prototype.addMovie = function(movie) {
+  this.movies.push(movie)
 }
 
-TicketBank.prototype.addTicket = function(ticket) {
-  this.savedTickets.push(ticket)
-}
-
-// CONSTRUCTOR TO BUILD NEW TICKETS FROM USER INPUTS
-function Ticket(title, time, age) {
-  this.title = title,
-  this.time = time,
-  this.age = age
-}
-
-// PROTOTYPE METHOD ADD TO CALCULATE TICKET COST BASED ON ADDED TICKET OBJECT
-
-Ticket.prototype.whichFilm = function(ticket) {
-  if (this.title === "ninjaTurtles") {
-    this.runStatus = 'old';
-  } else if (this.title === "fastFurious90") {
-    this.runStatus = 'new';
-  } else {
-    false;
+Movies.prototype.findMovie = function(movieTitle) {
+  for (var i = 0; i < this.movies.length; i++) {
+    if (this.movies[i].title === movieTitle) {
+      return this.movies[i];
+    }
   }
+  return false;
 }
 
+// Create Instances of MOVIE objects and add to MOVIES
 
-Ticket.prototype.getCost = function(ticket) {
- var discount = 0;
- var ticketBase = 12;
+var nowShowing = new Movies();
 
- switch (this.time) {
-   case "matinee":
-   discount += 2
-   break;
-   default:
- }
+var ninjaTurtles = new Movie("Teenage Mutant Ninja Turtles", "secondRun");
+var fastFurious90 = new Movie("Fast and Furious 90: The Wreckoning", "firstRun");
 
- switch (this.age) {
-   case "senior":
-     discount += 1
-     break;
-   default:
-  }
+nowShowing.addMovie(ninjaTurtles);
+nowShowing.addMovie(fastFurious90);
+console.log(nowShowing);
 
- switch (this.runStatus) {
-   case "old":
-     discount += 2
-     break;
-   default:
-  }
 
-    this.price = ticketBase - discount;
-};
 
+// BUSINESS LOGIC FOR TICKETS & TICKET PRICES
+function Ticket(movieTitle, showTime, ticketType, ticketPrice) {
+  this.movieTitle = movieTitle,
+  this.showTime = showTime,
+  this.ticketType = ticketType,
+  this.ticketPrice = ticketPrice
+}
+
+function TicketPrice() {
+  this.generalAdmission = 12;
+  this.seniorAndYouthAdmission = 2;
+  this.matineeAndLateShow = 1;
+  this.secondRun = 3;
+}
+
+TicketPrice.prototype.generateTicketPrice = function(ticketType, showTime, firstRunOrSecondRun) {
+  var discount = 0;
+  (ticketType === 'seniorAndYouthAdmission') ? discount += this.seniorAndYouthAdmission : discount;
+  (showTime === 'matineeAndLateShow') ? discount += this.matineeAndLateShow : discount;
+  (firstRunOrSecondRun === 'secondRun') ? discount += this.secondRun : discount;
+  return ticketPrice = this.generalAdmission - discount;
+}
+
+var ticketPrice = new TicketPrice();
+ticketPrice.generateTicketPrice("generalAdmission","primeTime", "secondRun");
+console.log(ticketPrice);
+var issueTicket = new Ticket("Teenage Mutant Ninja Turtles", "primeTime", "generalAdmission", ticketPrice);
+console.log(issueTicket);
 
 
 
 // USER INTERFACE LOGIC
 
-var ticketsSoldSoFar = new TicketBank();
+
 
 $(document).ready(function() {
   $("#showtime").submit(function(event) {
     event.preventDefault();
 
-    var title = $("#movieName").val();
-    var age = $("#age").val();
-    var time = $("#time").val();
+    // var movieTitle = $("#movieTitle").val();
+    // var ageGroupDiscount = $("#ageGroupDiscount").val();
+    // var showTime = $("#showTime").val();
 
-    var myTicket = new Ticket(title, time, age);
-    myTicket.getCost();
-    myTicket.whichFilm();
-    var cost = myTicket.price;
-    ticketsSoldSoFar.addTicket();
-    $("p#showCost").append(title + " " + time + " $" + cost + ".00");
+    // $("p#showCost").append(title + " " + time + " $" + cost + ".00");
 
   });
 });
