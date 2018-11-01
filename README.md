@@ -15,7 +15,7 @@ specification:
 * √ find out if the movie is first or second firstRun
 * √ get ticket price
 
-9: Get movie from UI and create ticket
-* get movie movie
-* find move using movie
-* issue ticket
+√ 9: Get movie from UI and create ticket
+* √ get movieTitle
+* √ find move using movie
+* √ issue ticket

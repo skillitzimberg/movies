@@ -6,8 +6,8 @@ function Movies() {
 }
 
 function Movie(title, firstRunOrSecondRun) {
-    this.title = title,
-    this.firstRunOrSecondRun = firstRunOrSecondRun
+  this.title = title,
+  this.firstRunOrSecondRun = firstRunOrSecondRun
 }
 
 Movies.prototype.addMovie = function(movie) {
@@ -24,26 +24,26 @@ Movies.prototype.findMovie = function(movieTitle) {
 }
 
 // BUSINESS LOGIC FOR TICKETS & TICKET PRICES
-function Ticket(movieTitle, time, ticketType, ticketPrice) {
-  this.movieTitle = movieTitle,
-  this.time = time,
-  this.ticketType = ticketType,
-  this.ticketPrice = ticketPrice
-}
-
-function TicketPrice() {
+function BoxOffice() {
   this.generalAdmission = 12;
   this.seniorAndYouthAdmission = 2;
   this.matineeAndLateShow = 1;
   this.secondRun = 3;
 }
 
-TicketPrice.prototype.generateTicketPrice = function(ticketType, showTime, firstRunOrSecondRun) {
+BoxOffice.prototype.generateTicketPrice = function(ticketType, showTime, firstRunOrSecondRun) {
   var discount = 0;
   (ticketType === 'seniorAndYouthAdmission') ? discount += this.seniorAndYouthAdmission : discount;
   (showTime === 'matineeAndLateShow') ? discount += this.matineeAndLateShow : discount;
   (firstRunOrSecondRun === 'secondRun') ? discount += this.secondRun : discount;
   return ticketPrice = this.generalAdmission - discount;
+}
+
+function Ticket(movieTitle, time, ticketType, ticketPrice) {
+  this.movieTitle = movieTitle,
+  this.time = time,
+  this.ticketType = ticketType,
+  this.ticketPrice = ticketPrice
 }
 
 // CREATE MOVIES "DATABASE"
@@ -54,33 +54,26 @@ var fastFurious90 = new Movie("Fast and Furious 90: The Wreckoning", "firstRun")
 nowShowing.addMovie(ninjaTurtles);
 nowShowing.addMovie(fastFurious90);
 
-
-// CREATE AND ISSUE A TICKET
-// FOLLOWING README SPECIFICATION 8:
-var chosenMovie = nowShowing.findMovie("Fast and Furious 90: The Wreckoning");
-var movieTitle = chosenMovie.title;
-var firstRunOrSecondRun = chosenMovie.firstRunOrSecondRun;
-var ticketPrice = new TicketPrice();
-
-// Admission type (general, senior/youth) is hard coded for now; will come from UI
-// Movie showing is hard coded for now; will come from UI
-ticketPrice.generateTicketPrice("generalAdmission","primeTime", firstRunOrSecondRun);
-
-var issueTicket = new Ticket(movieTitle, "primeTime", "generalAdmission", ticketPrice);
-console.log(issueTicket);
-
-
-
 // USER INTERFACE LOGIC
 
 $(document).ready(function() {
   $("#showtime").submit(function(event) {
     event.preventDefault();
 
-    var movieTitle = $("#movieTitle").val();
-    console.log(movieTitle);
-    // var ageGroupDiscount = $("#ageGroupDiscount").val();
-    // var showTime = $("#showTime").val();
+    var movie = $("#movie").val();
+    var ageGroupDiscount = $("#ageGroupDiscount").val();
+    var showTime = $("#showTime").val();
+
+    // CREATE AND ISSUE A TICKET
+    var movieDetails = nowShowing.findMovie(movie);
+    var movieTitle = movieDetails.title;
+    var firstRunOrSecondRun = movieDetails.firstRunOrSecondRun;
+    var ticketPrice = new BoxOffice();
+
+    var price = ticketPrice.generateTicketPrice(ageGroupDiscount,showTime, firstRunOrSecondRun);
+
+    var issueTicket = new Ticket(movieTitle, showTime, ageGroupDiscount, price);
+    console.log(issueTicket);
 
     // $("p#showCost").append(title + " " + time + " $" + cost + ".00");
 
